@@ -1,0 +1,21 @@
+name: Jay Pre Tenant
+on: 
+  push:
+    branches:
+       - main   
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Update Jay Pre Tenant
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.Jay_HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.Jay_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+              cd /var/www/html
+              ls -al
