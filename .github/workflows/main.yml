@@ -2,7 +2,7 @@ name: Jay Pre Tenant
 on: 
   push:
     branches:
-       - develop
+       - master
 jobs:
 
   build:
